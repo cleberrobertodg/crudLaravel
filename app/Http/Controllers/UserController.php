@@ -8,6 +8,11 @@ class UserController extends Controller
 {
     public function index(){
         //Carrega a view
-        return view('user.index');
+        return view('users.index');
+    }
+
+    public function create(){
+        //Carregar a view
+        return view('users/create');
     }
 }
