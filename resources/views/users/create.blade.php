@@ -13,11 +13,11 @@
     <form action="#" method="POST">
         @csrf
         @method('POST')
-        <label for="name">Nome: </label><br>
-        <input type="text" id="name" name="name" required placeholder="Nome completo"><br>
-        <label for="email">Email: </label><br>
-        <input type="email" id="email" name="email" required placeholder="Email"><br>
-        <label>Senha: </label><br>
+        <label for="name">Nome: </label>
+        <input type="text" id="name" name="name" required placeholder="Nome completo"><br><br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" required placeholder="Email"><br><br>
+        <label>Senha: </label>
         <input type="password" id="password" name="password" required placeholder="Senha"><br><br>
 
         <button type="submit">Cadastrar</button>
