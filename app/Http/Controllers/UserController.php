@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -16,7 +17,8 @@ class UserController extends Controller
         return view('users/create');
     }
 
-    public function store(){
-        return ;
+    public function store(UserRequest $request){
+        //Validar o formulário
+        $request->validated();
     }
 }

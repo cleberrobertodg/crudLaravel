@@ -18,6 +18,15 @@
     <a href="{{ route('user.index') }}">Listar</a><br>
     <h2>Cadastrar usuário</h2>
 
+    @if($errors->any()){
+        @foreach ($errors->all() as $error)
+            <p style="color: red;">
+                {{ $error }}
+            </p>
+        @endforeach
+        }
+    @endif
+
     <form
         action="{{ route('user-store') }}"
         method="POST"
