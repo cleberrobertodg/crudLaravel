@@ -47,6 +47,7 @@
             type="email"
             id="email"
             name="email"
+            value="{{ old('email') }}"
             required
             placeholder="Email"
         ><br><br>
@@ -55,6 +56,7 @@
             type="password"
             id="password"
             name="password"
+            value="{{ old('password') }}"
             required
             placeholder="Senha"
         ><br><br>
