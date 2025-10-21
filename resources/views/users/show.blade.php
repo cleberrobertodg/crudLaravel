@@ -16,7 +16,22 @@
 
 <body>
     <a href="{{route('user.index')}}">Listar</a><br>
-    <a href="{{route('user.edit', ['user' => $user])}}">Editar</a>
+    <a href="{{route('user.edit', ['user' => $user])}}">Editar</a><br>
+    <form
+            action="{{ route('user.destroy', ['user' => $user->id]) }}"
+            method="POST"
+            style="display:inline;"
+        >
+            @csrf
+            @method('DELETE')
+            <button
+                type="submit"
+                onclick="return confirm('Tem certeza que deseja excluir este usuário?')"
+                style="background:none; border:none; padding:0; color:blue; text-decoration:underline; cursor:pointer;"
+            >
+                Excluir
+            </button>
+        </form>
 
     <h2>Visualizar usuários</h2>
 

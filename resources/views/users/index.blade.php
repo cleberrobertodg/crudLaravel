@@ -28,12 +28,27 @@
 
 
     @forelse ($users as $user)
-       ID: {{ $user->id }}<br>
-       Nome: {{ $user->name }}<br>
-       E-mail: {{ $user->email }}<br>
-       <a href="{{ route('user.show', ['user' => $user]) }}">Visualizar</a><br>
-       <a href="{{ route('user.edit', ['user' => $user]) }}">Editar</a>
-       <hr>
+        ID: {{ $user->id }}<br>
+        Nome: {{ $user->name }}<br>
+        E-mail: {{ $user->email }}<br>
+        <a href="{{ route('user.show', ['user' => $user]) }}">Visualizar</a><br>
+        <a href="{{ route('user.edit', ['user' => $user]) }}">Editar</a><br>
+        <form
+            action="{{ route('user.destroy', ['user' => $user->id]) }}"
+            method="POST"
+            style="display:inline;"
+        >
+            @csrf
+            @method('DELETE')
+            <button
+                type="submit"
+                onclick="return confirm('Tem certeza que deseja excluir este usuário?')"
+                style="background:none; border:none; padding:0; color:blue; text-decoration:underline; cursor:pointer;"
+            >
+                Excluir
+            </button>
+        </form>
+        <hr>
     @empty
 
     @endforelse
