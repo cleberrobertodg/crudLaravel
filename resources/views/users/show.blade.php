@@ -16,6 +16,7 @@
 
 <body>
     <a href="{{route('user.index')}}">Listar</a><br>
+    <a href="{{route('user.edit', ['user' => $user])}}">Editar</a>
 
     <h2>Visualizar usuários</h2>
 

@@ -31,7 +31,8 @@
        ID: {{ $user->id }}<br>
        Nome: {{ $user->name }}<br>
        E-mail: {{ $user->email }}<br>
-       <a href="{{ route('user.show', ['user' => $user]) }}">Visualizar</a>
+       <a href="{{ route('user.show', ['user' => $user]) }}">Visualizar</a><br>
+       <a href="{{ route('user.edit', ['user' => $user]) }}">Editar</a>
        <hr>
     @empty
 
