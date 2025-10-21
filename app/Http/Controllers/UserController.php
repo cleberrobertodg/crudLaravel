@@ -9,8 +9,11 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index(){
+        //Listar os usuários registrados no banco de dados
+        $users = User::orderByDesc('id')->get();
+
         //Carrega a view
-        return view('users.index');
+        return view('users.index', ['users' => $users]);
     }
 
     public function create(){
@@ -22,6 +25,7 @@ class UserController extends Controller
         //Validar o formulário
         $request->validated();
 
+        //Cadastrar usuário no banco de dados
         User::create([
             'name' => $request->name,
             'email' => $request->email,
