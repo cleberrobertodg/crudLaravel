@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function index(){
         //Listar os usuários registrados no banco de dados
-        $users = User::orderByDesc('id')->get();
+        $users = User::orderBy('id')->get();
 
         //Carrega a view
         return view('users.index', ['users' => $users]);

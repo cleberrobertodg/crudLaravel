@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+@extends('layouts.admin')
 
-<head>
-    <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-    <meta
-        http-equiv="X-UA-Compatible"
-        content="ie=edge"
-    >
-    <title>Show</title>
-</head>
+@section('content')
 
-<body>
     <a href="{{route('user.index')}}">Listar</a><br>
     <a href="{{route('user.edit', ['user' => $user])}}">Editar</a><br>
     <form
@@ -27,7 +14,7 @@
             <button
                 type="submit"
                 onclick="return confirm('Tem certeza que deseja excluir este usuário?')"
-                style="background:none; border:none; padding:0; color:blue; text-decoration:underline; cursor:pointer;"
+                style="background:none; border:none; padding:0; color:red; text-decoration:underline; cursor:pointer;"
             >
                 Excluir
             </button>
@@ -40,7 +27,4 @@
     E-mail: {{ $user->email }} <br>
     Cadastrado: {{ $user->created_at->format('d/m/Y H:i:s') }} <br>
     Atualizado: {{ $user->updated_at->format('d/m/Y H:i:s') }} <br>
-
-</body>
-
-</html>
+@endsection
